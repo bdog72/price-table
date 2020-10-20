@@ -62,20 +62,70 @@
 
 /////////////////////////////////////
 
-function lastElement(arr) {
-  if (arr.length === 0) {
+// function lastElement(arr) {
+//   if (arr.length === 0) {
+//     return null;
+//   }
+//   const last = arr[arr.length - 1];
+//   return last;
+//   // return arr[arr.length - 1];
+// }
+
+// console.log(lastElement([3, 5, 7]));
+// console.log(lastElement([1]));
+// console.log(lastElement([]));
+// console.log(lastElement([11, 2]));
+
+/////////////////////////////////////
+
+// function capitalize(str) {
+//   const newStr = str.charAt(0).toUpperCase() + str.slice(1);
+//   console.log(newStr);
+//   return newStr;
+// }
+
+// capitalize('eggplant');
+// capitalize('pamplemousse');
+// capitalize('squid');
+
+const sumArray = (nums) => {
+  const total = nums.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue;
+  });
+  console.log(total);
+};
+
+sumArray([1, 2, 3]);
+sumArray([2, 2, 2, 2]);
+sumArray([50, 50, 1]);
+
+// console.log([1, 2, 3, 4].reduce((a, b) => a + b, 0));
+
+/////////////////////////////////////
+
+const days = {
+  1: 'Monday',
+  2: 'Tuesday',
+  3: 'Wednesday',
+  4: 'Thursday',
+  5: 'Friday',
+  6: 'Saturday',
+  7: 'Sunday',
+};
+
+function returnDay(day) {
+  if (day < 1 || day > 7) {
+    console.log(days[day]);
     return null;
+  } else {
+    console.log(days[day]);
+    return days[day];
   }
-  const last = arr[arr.length - 1];
-  return last;
-  // return arr[arr.length - 1];
 }
 
-console.log(lastElement([3, 5, 7]));
-console.log(lastElement([1]));
-console.log(lastElement([]));
-console.log(lastElement([11, 2]));
+returnDay(1);
+returnDay(7);
+returnDay(4);
+returnDay(0);
 
-/////////////////////////////////////
-/////////////////////////////////////
 /////////////////////////////////////
