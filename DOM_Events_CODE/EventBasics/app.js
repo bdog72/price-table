@@ -1,77 +1,50 @@
 //
 //
-const btn = document.querySelector('#v2');
 
-btn.onclick = function () {
-  console.log('clicked');
-};
+// const randomColorh1 = document.querySelector('#randomColorh1');
+// const randomColorBtn = document.querySelector('#randomColorbtn');
 
-function scream() {
-  console.log('scream');
-}
-
-btn.onmouseenter = scream;
-
-///////////////////
-///////////////////
-///////////////////
-///////////////////
-///////////////////
-///////////////////
-///////////////////
-///////////////////
-///////////////////
-///////////////////
-///////////////////
-///////////////////
-///////////////////
-///////////////////
-///////////////////
-///////////////////
-///////////////////
-///////////////////
-///////////////////
-///////////////////
-///////////////////
-///////////////////
-///////////////////
-///////////////////
-///////////////////
-///////////////////
-// const btn = document.querySelector('#v2');
-
-// btn.onclick = function () {
-//   console.log('YOU CLICKED ME!');
-//   console.log('I HOPE IT WORKED!!');
-// };
-
-// function scream() {
-//   console.log('AAAAAHHHHH');
-//   console.log('STOP TOUCHING ME!');
-// }
-
-// btn.onmouseenter = scream;
-
-// document.querySelector('h1').onclick = () => {
-//   alert('you clicked the h1!');
-// };
-
-// const btn3 = document.querySelector('#v3');
-// btn3.addEventListener('click', function () {
-//   alert('CLICKED!');
+// randomColorBtn.addEventListener('click', function () {
+//   const newColor = randomColor();
+//   document.body.style.backgroundColor = newColor;
+//   randomColorh1.textContent = newColor;
 // });
 
-// function twist() {
-//   console.log('TWIST!');
-// }
-// function shout() {
-//   console.log('SHOUT!');
-// }
+// const randomColor = () => {
+//   const r = Math.floor(Math.random() * 255);
+//   const g = Math.floor(Math.random() * 255);
+//   const b = Math.floor(Math.random() * 255);
 
-// const tasButton = document.querySelector('#tas');
+//   return `rgb(${r}, ${g}, ${b})`;
+// };
 
-// // tasButton.onclick = twist;
-// // tasButton.onclick = shout;
+const randomColorh1 = document.querySelector('#randomColorh1');
+const randomColorBtn = document.querySelector('#randomColorbtn');
 
-// tasButton.addEventListener('click', twist);
-// tasButton.addEventListener('click', shout);
+randomColorBtn.addEventListener('click', function () {
+  const newColor = randomColor();
+  document.body.style.backgroundColor = newColor;
+  randomColorh1.textContent = newColor;
+});
+
+const randomColor = () => {
+  const r = Math.floor(Math.random() * 255);
+  const g = Math.floor(Math.random() * 255);
+  const b = Math.floor(Math.random() * 255);
+
+  const newArray = [r, g, b];
+
+  const reducer = newArray.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue;
+  });
+
+  console.log(reducer);
+
+  if (reducer < 300) {
+    randomColorh1.style.color = '#fff';
+  } else {
+    randomColorh1.style.color = '#000';
+  }
+
+  return `rgb(${r}, ${g}, ${b})`;
+};

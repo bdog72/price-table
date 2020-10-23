@@ -1,27 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Event Basics</title>
-</head>
+    <style>
+      input {
+        display: block;
+        /* margin: 5px 0; */
+      }
+      .input-username {
+        margin-bottom: 10px !important;
+      }
+      .form-button {
+        margin-top: 15px;
+      }
+    </style>
+  </head>
 
-<body>
+  <body>
     <h1>Form Events</h1>
+    <form action="/dogs" id="tweet-form">
+      <label for="username">Name:</label>
+      <input
+        class="input-username"
+        type="text"
+        name="username"
+        placeholder="username"
+      />
+      <label class="tweet-label" for="tweet">Tweet:</label>
+      <input class="input-tweet" type="text" name="tweet" />
+      <button class="form-button">Post Tweet</button>
+    </form>
+    <h2>Tweets</h2>
+    <ul id="tweets">
+      <!-- <li>
+        <b></b>
+      </li> -->
+    </ul>
 
-    <form action="/dogs" id="tweetForm">
-        <input type="text" name="username" placeholder="username">
-        <input type="text" name="tweet" placeholder="tweet">
-        <button>Post Tweet</button>
+    <!-- <form action="/dogs" id="tweetForm">
+      <input type="text" name="username" placeholder="username" />
+      <input type="text" name="tweet" placeholder="tweet" />
+      <button>Post Tweet</button>
     </form>
 
     <h2>Tweets:</h2>
-    <ul id="tweets">
-
-    </ul>
+    <ul id="tweets"></ul> -->
 
     <script src="app.js"></script>
-</body>
-
+  </body>
 </html>
